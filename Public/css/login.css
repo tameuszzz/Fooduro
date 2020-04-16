@@ -1,0 +1,118 @@
+form {
+    text-align: center;
+}
+
+.left-side, .right-side, .right-sidev2 {
+    padding: 10% 0 0 0;
+}
+
+h2 {
+    margin-left: 3em;
+    font-size: 18px !important;
+}
+
+#log-in {
+    font-weight: 800;
+    color: black;
+    letter-spacing: 0.2em;
+    padding-bottom: 0.5em;
+}
+
+.form-group {
+    max-width: 25em;
+    margin: 1.5em auto !important;
+}
+
+.input-group-text, input, button.sign-in {
+    border: none !important;
+    background-color: white !important;
+    color: #707070 !important;
+    font-family: 'Montserrat', sans-serif !important;
+    box-shadow: 7px 7px 9px #D5D7E1;
+    height: 3.5em !important;
+}
+
+.input-group-text > i {
+    margin-left: 5px;
+}
+
+button.sign-in {
+    width: 10em;
+    border-radius: 20px !important;
+    color: #D40B6F !important;
+}
+
+button.sign-in:hover {
+    color: white !important;
+    background-color: #D40B6F !important;
+    border: 1px solid white !important;
+}
+
+button.sign-in > i {
+    color: #D40B6F !important;
+    margin-left: 5px;
+} 
+
+button.sign-in:hover > i {
+    color: white !important;
+}
+
+.input-group-text {
+    border-radius: 20px 0 0 20px !important;
+}
+
+input {
+    border-radius: 0 20px 20px 0 !important;
+}
+
+h5 {
+    padding-top: 1em;
+    font-size: 12px !important;
+}
+
+h5 > span > a {
+    color: #707070;
+    text-decoration: none;
+}
+
+h5 > span > a:hover {
+    color:  #D40B6F;
+}
+
+h5 > span {
+    text-decoration: underline;
+    text-decoration-color: #707070;
+}
+
+.right-side > img {
+    padding-left: 10em;
+    max-width: 450px;
+    max-height: 250px;
+}
+
+/* ================================== */
+
+#account {
+    font-size: 20px;
+    font-weight: 800;
+    color: black;
+    letter-spacing: 0.2em;
+    padding-bottom: 0.8em;
+    margin-left: 0.2em;
+}
+
+.name {
+    margin-right: 15px;
+}
+
+.right-sidev2 > img {
+    padding-left: 10em;
+    max-width: 550px;
+    max-height: 350px;
+}
+
+@media screen and (max-width:960px) {
+    .right-side, .right-sidev2{
+        display: none !important;
+    }
+}
