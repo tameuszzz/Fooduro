@@ -1,6 +1,7 @@
 <?php
 
 require_once 'Controllers//SecurityController.php';
+require_once 'Controllers//BoardController.php';
 
 
 class Routing {
@@ -20,6 +21,14 @@ class Routing {
             'logout' => [
                 'controller' => 'SecurityController',
                 'action' => 'logout'
+            ],
+            'emailConfirm' => [
+                'controller' => 'SecurityController',
+                'action' => 'emailConfirm'
+            ],
+            'home' => [
+                'controller' => 'BoardController',
+                'action' => 'loadHome'
             ]
         ];
     }

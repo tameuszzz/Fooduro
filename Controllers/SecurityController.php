@@ -15,7 +15,7 @@ class SecurityController extends AppController {
         // Jeśli użytkownik jest zalogowany
         if($_SESSION){
             $url = "http://$_SERVER[HTTP_HOST]/";
-            header("Location: {$url}/Fooduro/?page=delivery");
+            header("Location: {$url}Fooduro/?page=home");
             return;
         }
 
@@ -47,7 +47,7 @@ class SecurityController extends AppController {
             $_SESSION["ID_address"] = $user->getIdAddress();
 
             $url = "http://$_SERVER[HTTP_HOST]/";
-            header("Location: {$url}/Fooduro/?page=delivery");
+            header("Location: {$url}Fooduro/?page=home");
             return;
         }
 
@@ -60,7 +60,7 @@ class SecurityController extends AppController {
         // Jeśli użytkownik jest zalogowany
         if($_SESSION){
             $url = "http://$_SERVER[HTTP_HOST]/";
-            header("Location: {$url}/Fooduro/?page=delivery"); 
+            header("Location: {$url}Fooduro/?page=home"); 
             return;
         }
 
@@ -89,7 +89,7 @@ class SecurityController extends AppController {
             // Success
             $hashed_password = password_hash($password1, PASSWORD_DEFAULT);
             $this->userRepository->makeUser($email, $hashed_password, $firstName, $lastName);
-            $this->render('login'); 
+            $this->render('emailConfirm'); 
             return;
         }
 
