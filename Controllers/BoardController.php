@@ -22,4 +22,20 @@ class BoardController extends AppController {
         }
     }
 
+    public function loadAbout() {
+        $this->render('about');
+    }
+
+    public function loadDelivery() {
+        $this->render('delivery');
+    }
+
+    public function loadPayments() {
+        $this->render('payments');
+    }
+
+    public function loadContact() {
+        $this->render('contact');
+    }
+
 }

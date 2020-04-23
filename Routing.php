@@ -29,6 +29,22 @@ class Routing {
             'home' => [
                 'controller' => 'BoardController',
                 'action' => 'loadHome'
+            ],
+            'about' => [
+                'controller' => 'BoardController',
+                'action' => 'loadAbout'
+            ],
+            'delivery' => [
+                'controller' => 'BoardController',
+                'action' => 'loadDelivery'
+            ],
+            'payments' => [
+                'controller' => 'BoardController',
+                'action' => 'loadPayments'
+            ],
+            'contact' => [
+                'controller' => 'BoardController',
+                'action' => 'loadContact'
             ]
         ];
     }
