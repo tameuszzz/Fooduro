@@ -60,6 +60,7 @@ nav > .logo {
 
 .nav__links {
     list-style: none;
+
 }
 
 .nav__links li {
@@ -67,11 +68,16 @@ nav > .logo {
     padding: 0 20px;
 }
 
-.nav__links li a {
-    transition: all 0.3s ease 0s;
+.nav__links li a, .nav__links li a i, .nav__links li a span {
+    transition: all 0.4s ease 0s;
 }
 
-.nav__links li a:hover {
+.nav__links li a i {
+    font-size: 11px;
+    padding-right: 0.5em;
+}
+
+.nav__links li a:hover, .nav__links li a:hover i, .nav__links li a:hover span {
     color: #D40B6F !important;
 }
 
