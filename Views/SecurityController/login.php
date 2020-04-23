@@ -43,6 +43,7 @@
                     </div>
                     <button class="sign-in">Sign In<i class="fas fa-chevron-right"></i></button>
                     <h5>New here? <span><a href="?page=register">Sign Up!</a></span></h5>
+                    <h5 style="font-size: 12px !important;">Forgot Password? <span><a href="#">Click Here!</a></span></h5>
                 </form>
             </div>
               <div class="col-lg-6 col-md-6 col-sm-0 right-side">
