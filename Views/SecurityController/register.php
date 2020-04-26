@@ -9,6 +9,30 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <!-- Font Awesone CDN -->
     <script src="https://kit.fontawesome.com/7a5a5490a9.js" crossorigin="anonymous"></script>
+    <script>
+        function formularz(){
+            const form = document.forms[0];
+            var pass1 = document.getElementById('pass1').value;
+            var pass2 = document.getElementById('pass2').value;
+            var email = document.getElementById('email').value;
+            if(pass1.length < 6 || pass1 != pass2){
+                alert("Blad w podanych haslach!");
+                pass1 = '';
+                pass2 = '';
+                email = '';
+                form.reset();
+            }
+            else if(email.indexOf('@') == -1){
+                alert('Email musi zawierać @!');
+                pass1 = '';
+                pass2 = '';
+                email = '';
+                form.reset();
+            }
+            form.submit();
+            alert(input);
+        }
+    </script>
 </head>
 <body>
 
@@ -23,46 +47,46 @@
                 <h2>Create an <span id="account">Account</span></h2>
                 <form method='POST' action='?page=register'>
                     <div class="form-group row">
-                        <label class="sr-only" for="inlineFormInputGroup">Name</label>
+                        <label class="sr-only">Name</label>
                         <div class="input-group mb-2">
                             <div class="input-group-prepend">
                                 <div class="input-group-text"><i class="fas fa-user"></i></div>
                             </div>
-                            <input type="text" class="form-control name" id="inlineFormInputGroup" placeholder="Name" name='firstName'>
+                            <input type="text" class="form-control name" placeholder="Name" name='firstName'>
                             <div class="input-group-prepend">
                                 <div class="input-group-text"><i class="fas fa-user"></i></div>
                             </div>
-                            <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Surname" name='lastName'>
+                            <input type="text" class="form-control" placeholder="Surname" name='lastName'>
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label class="sr-only" for="inlineFormInputGroup">Email</label>
+                        <label class="sr-only">Email</label>
                         <div class="input-group mb-2">
                             <div class="input-group-prepend">
                                 <div class="input-group-text"><i class="fas fa-envelope"></i></div>
                             </div>
-                            <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Email address" name='email'>
+                            <input type="text" class="form-control" placeholder="Email address" name='email' id="email">
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label class="sr-only" for="inlineFormInputGroup">Password</label>
+                        <label class="sr-only">Password</label>
                         <div class="input-group mb-2">
                             <div class="input-group-prepend">
                                 <div class="input-group-text"><i class="fas fa-lock"></i></div>
                             </div>
-                            <input type="password" class="form-control" id="inlineFormInputGroup" placeholder="Password" name='password1'>
+                            <input type="password" class="form-control" placeholder="Password" name='password1' id="pass1">
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label class="sr-only" for="inlineFormInputGroup">Password</label>
+                        <label class="sr-only">Password</label>
                         <div class="input-group mb-2">
                             <div class="input-group-prepend">
                                 <div class="input-group-text"><i class="fas fa-lock"></i></div>
                             </div>
-                            <input type="password" class="form-control" id="inlineFormInputGroup" placeholder="Password" name='password2'>
+                            <input type="password" class="form-control" placeholder="Password" name='password2' id="pass2">
                         </div>
                     </div>
-                    <button class="sign-in">Sign Up<i class="fas fa-chevron-right"></i></button>
+                    <button class="sign-in" type='button' onclick="formularz()">Sign Up<i class="fas fa-chevron-right"></i></button>
                 </form>
             </div>
               <div class="col-lg-6 col-md-6 col-sm-0 right-sidev2">
