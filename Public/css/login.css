@@ -40,6 +40,7 @@ button.sign-in {
     width: 10em;
     border-radius: 20px !important;
     color: #D40B6F !important;
+    transition-duration: 0.2s;
 }
 
 button.sign-in:hover {
@@ -109,6 +110,12 @@ h5 > span {
     padding-left: 10em;
     max-width: 550px;
     max-height: 350px;
+}
+
+.com{
+    padding-left: 10em;
+    color: red;
+    height: 1em;
 }
 
 @media screen and (max-width:960px) {
