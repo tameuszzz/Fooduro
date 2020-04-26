@@ -9,30 +9,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <!-- Font Awesone CDN -->
     <script src="https://kit.fontawesome.com/7a5a5490a9.js" crossorigin="anonymous"></script>
-    <script>
-        function formularz(){
-            const form = document.forms[0];
-            var pass1 = document.getElementById('pass1').value;
-            var pass2 = document.getElementById('pass2').value;
-            var email = document.getElementById('email').value;
-            if(pass1.length < 6 || pass1 != pass2){
-                alert("Blad w podanych haslach!");
-                pass1 = '';
-                pass2 = '';
-                email = '';
-                form.reset();
-            }
-            else if(email.indexOf('@') == -1){
-                alert('Email musi zawierać @!');
-                pass1 = '';
-                pass2 = '';
-                email = '';
-                form.reset();
-            }
-            form.submit();
-            alert(input);
-        }
-    </script>
+    <script src="Public/js/forms.js" crossorigin="anonymous"></script>
 </head>
 <body>
 
@@ -45,6 +22,7 @@
             <div class="row">
               <div class="col-lg-6 col-md-6 col-sm-12 left-side">
                 <h2>Create an <span id="account">Account</span></h2>
+                <div class='com' id='com'></div>
                 <form method='POST' action='?page=register'>
                     <div class="form-group row">
                         <label class="sr-only">Name</label>
@@ -52,11 +30,11 @@
                             <div class="input-group-prepend">
                                 <div class="input-group-text"><i class="fas fa-user"></i></div>
                             </div>
-                            <input type="text" class="form-control name" placeholder="Name" name='firstName'>
+                            <input type="text" class="form-control name" placeholder="Name" name='firstName' id='firstName'>
                             <div class="input-group-prepend">
                                 <div class="input-group-text"><i class="fas fa-user"></i></div>
                             </div>
-                            <input type="text" class="form-control" placeholder="Surname" name='lastName'>
+                            <input type="text" class="form-control" placeholder="Surname" name='lastName' id='lastName'>
                         </div>
                     </div>
                     <div class="form-group row">
@@ -86,7 +64,8 @@
                             <input type="password" class="form-control" placeholder="Password" name='password2' id="pass2">
                         </div>
                     </div>
-                    <button class="sign-in" type='button' onclick="formularz()">Sign Up<i class="fas fa-chevron-right"></i></button>
+                    <button class="sign-in" type='button' onclick="register()">Sign Up<i class="fas fa-chevron-right"></i></button>
+                    <h5>Already here? <span><a href="?page=login">Sign In!</a></span></h5>
                 </form>
             </div>
               <div class="col-lg-6 col-md-6 col-sm-0 right-sidev2">
