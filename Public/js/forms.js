@@ -32,3 +32,14 @@ function login(){
         form.submit();
     }
 }
+
+function contact(){
+    const formy = document.forms[1]; //czemu 1? nie wiem xd
+    var content = document.getElementById('content').value;
+    if(content.length < 1){
+        formy.reset();
+    } else {
+        formy.submit();
+    }
+
+}
