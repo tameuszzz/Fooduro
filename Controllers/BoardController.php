@@ -41,12 +41,13 @@ class BoardController extends AppController {
             header("Location: {$url}Fooduro/?page=login");
             return; 
         }
+        $helpRepository = new HelpRepository();
         if($this->isPost()){
-            $helpRepository = new HelpRepository();
-            $content = $POST['content'];
+            $content = $_POST['content'];
             $helpRepository->sendMessage($content, $_SESSION['ID_user'], 0);
-            //Not yet
         }
+        
+        $this->numberOfNotAnwseredYourMessages = $helpRepository->allUserMessage($_SESSION['ID_user']);
         $this->render('contact');
     }
 
