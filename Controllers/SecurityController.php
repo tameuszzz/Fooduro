@@ -37,7 +37,7 @@ class SecurityController extends AppController {
                 return;
             }
 
-            // Success
+            // session
             $_SESSION["ID_user"] = $user->getIdUser();
             $_SESSION["email"] = $user->getEmail();
             $_SESSION["password"] = $user->getPassword();
@@ -45,6 +45,10 @@ class SecurityController extends AppController {
             $_SESSION["lastName"] = $user->getLastName();
             $_SESSION["phone"] = $user->getPhone();
             $_SESSION["ID_address"] = $user->getIdAddress();
+
+            // cookies
+            setcookie("userEmail", $_SESSION['email'], time()+3600*24);
+            setcookie("userFirstName", $_SESSION['firstName'], time()+3600*24);
 
             $url = "http://$_SERVER[HTTP_HOST]/";
             header("Location: {$url}Fooduro/?page=home");

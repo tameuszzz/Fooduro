@@ -3,6 +3,7 @@
 require_once 'AppController.php';
 require_once __DIR__ . '/../Database.php';
 require_once __DIR__.'//..//Repository//UserRepository.php';
+require_once __DIR__.'//..//Repository//HelpRepository.php';
 
 class BoardController extends AppController {
 
@@ -35,6 +36,17 @@ class BoardController extends AppController {
     }
 
     public function loadContact() {
+        if(!$_SESSION){
+            $url = "http://$_SERVER[HTTP_HOST]/";
+            header("Location: {$url}Fooduro/?page=login");
+            return; 
+        }
+        if($this->isPost()){
+            $helpRepository = new HelpRepository();
+            $content = $POST['content'];
+            $helpRepository->sendMessage($content, $_SESSION['ID_user'], 0);
+            //Not yet
+        }
         $this->render('contact');
     }
 
