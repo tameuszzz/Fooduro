@@ -27,10 +27,11 @@
     <div class="main">
         <h1>CONTACT PAGE</h1>
         <form method='POST' action='?page=contact'>
-            <textarea type="text" placeholder='What you want to ask?' name='content' id='firstName'></textarea>
-            <button type='button'>OK</button>
+            <textarea type="text" placeholder='What you want to ask?' name='content' id='content'></textarea>
+            <button type='button' onClick='contact()'>OK</button>
         </form> 
         
+        <h5>Liczba Twoich wątków bez odpowiedzi: <?= $this->numberOfNotAnwseredYourMessages?></h5>
     </div>
 
     <!-- footer -->
