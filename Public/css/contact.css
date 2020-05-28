@@ -1,0 +1,127 @@
+.right-side, .left-side {
+    padding: 8% 0 0 0;
+}
+
+.left-side > img {
+    padding-left: 4em;
+    max-width: 450px;
+    max-height: 350px;
+}
+
+.right-side {
+    text-align: center;
+}
+
+.about-text {
+    background-color: white;
+    border-radius: 25px;
+    box-shadow: 7px 7px 9px #D5D7E1;
+}
+
+.text-area {
+    padding: 1.5em;
+}
+
+h2 {
+    margin-left: 3em;
+    font-size: 28px !important;
+    text-align: left;
+}
+
+h4 {
+    font-size: 18px !important;
+}
+
+.rules > h3 {
+    font-size: 15px !important;
+    margin-bottom: 1rem;
+}
+
+.rules {
+    text-align: center;
+}
+
+#content {
+    outline: none;
+    border: solid 0.5px #D40B6F !important; 
+    width: 80%;
+    min-height: 6em;
+    padding: 0.6rem;
+    resize: none;
+}
+
+.ok-button {
+    outline: none !important; 
+    width: 8em;
+    border: solid 1px #D40B6F !important;
+    border-radius: 20px !important;
+    color: #D40B6F !important;
+    transition-duration: 0.2s;
+    font-weight: 600;
+    background-color: white;
+    box-shadow: 3px 3px 5px #D5D7E1;
+    height: 2em !important;
+    margin-bottom: 1rem;
+    margin-top: 0.5rem;
+}
+
+.ok-button:hover {
+    color: white !important;
+    background-color: #D40B6F !important;
+}
+
+h5 {
+    font-size: 12px;
+}
+
+.con-inf {
+    margin-top: 1rem !important;
+    margin-bottom: 0 !important;
+    font-size: 13px;
+}
+
+.log-in > p {
+    display: inline-grid;
+    font-size: 12px;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+}
+
+.log-in > p > i {
+    font-size: 13px;
+    color: #D40B6F;
+}
+
+.log-in > p > span {
+    font-size: 11px;
+    transition-duration: 0.2s;
+}
+
+.log-in > p > span:hover {
+    color: #D40B6F !important;
+}
+
+.not-log-in > p {
+    font-size: 15px;
+    padding-top: 0.5rem;
+}
+
+.not-log-in > p > i {
+    font-size: 16px;
+    color: #D40B6F;
+}
+
+.not-log-in > p > span {
+    font-size: 12px;
+    transition-duration: 0.2s;
+}
+
+.not-log-in > p > span:hover {
+    color: #D40B6F !important;
+}
+
+@media screen and (max-width:960px) {
+    .left-side {
+        display: none !important;
+    }
+}

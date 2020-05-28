@@ -36,18 +36,30 @@ class BoardController extends AppController {
     }
 
     public function loadContact() {
-        if(!$_SESSION){
-            $url = "http://$_SERVER[HTTP_HOST]/";
-            header("Location: {$url}Fooduro/?page=login");
-            return; 
-        }
-        $helpRepository = new HelpRepository();
-        if($this->isPost()){
-            $content = $_POST['content'];
-            $helpRepository->sendMessage($content, $_SESSION['ID_user'], 0);
+        // if(!$_SESSION){
+        //     $url = "http://$_SERVER[HTTP_HOST]/";
+        //     header("Location: {$url}Fooduro/?page=login");
+        //     return; 
+        // }
+        // $helpRepository = new HelpRepository();
+        // if($this->isPost()){
+        //     $content = $_POST['content'];
+        //     $helpRepository->sendMessage($content, $_SESSION['ID_user'], 0);
+        // }
+        
+        // $this->numberOfNotAnwseredYourMessages = $helpRepository->allUserMessage($_SESSION['ID_user']);
+        // $this->render('contact');
+
+        if($_SESSION){
+            $helpRepository = new HelpRepository();
+            if($this->isPost()){
+                $content = $_POST['content'];
+                $helpRepository->sendMessage($content, $_SESSION['ID_user'], 0);
+            }
+            
+            $this->numberOfNotAnwseredYourMessages = $helpRepository->allUserMessage($_SESSION['ID_user']);
         }
         
-        $this->numberOfNotAnwseredYourMessages = $helpRepository->allUserMessage($_SESSION['ID_user']);
         $this->render('contact');
     }
 
