@@ -1,0 +1,57 @@
+.left-side, .right-side {
+    padding: 5% 0 0 0;
+}
+
+.right-side > img {
+    padding-left: 2rem;
+    padding-top: 3rem;
+    max-width: 500px;
+    margin: 10%;
+}
+
+.left-side {
+    text-align: center;
+}
+
+.settings .form-group {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    color: #707070;
+}
+
+.settings .form-group > label {
+    font-size: 1.3rem;
+    color: #707070;
+}
+
+.settings .form-control {
+    font-size: 1.2rem;
+    color: #707070;
+    border-color: #D40B6F !important;
+    outline: none !important; 
+    box-shadow: 7px 7px 9px #D5D7E1;
+}
+
+.update-btn {
+    outline: none !important; 
+    width: 10em;
+    border: solid 1px #D40B6F !important;
+    border-radius: 20px !important;
+    color: #D40B6F !important;
+    transition-duration: 0.2s;
+    font-weight: 600;
+    background-color: white;
+    box-shadow: 3px 3px 5px #D5D7E1;
+    height: 3em !important;
+    margin-bottom: 1rem;
+    margin-top: 0.5rem;
+}
+.update-btn:hover {
+    color: white !important;
+    background-color: #D40B6F !important;
+}
+
+.newsletter > label::after {
+    background-color: #D40B6F;
+    outline: none !important; 
+}

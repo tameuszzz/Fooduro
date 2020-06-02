@@ -63,4 +63,16 @@ class BoardController extends AppController {
         $this->render('contact');
     }
 
+    public function loadAccount() {
+        $this->render('account');
+    }
+
+    public function loadCart() {
+        $this->render('cart');
+    }
+
+    public function loadProducts() {
+        $this->render('products');
+    }    
+
 }

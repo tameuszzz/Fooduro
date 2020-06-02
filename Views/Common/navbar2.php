@@ -4,8 +4,8 @@
         <a class="navbar-brand logo" href="?page=home"><img src="Public/img/logo.png" alt="logo">Fooduro.com</a>
         <div class="links">
             <ul class="nav__links icons">
-                <li><a href="#"><i class="fas fa-user"></i><span>Account</span></a></li>
-                <li><a href="#"><i class="fas fa-shopping-cart"></i><span>Cart </span>(0)</a></li>
+                <li><a href="?page=account"><i class="fas fa-user"></i><span>Account</span></a></li>
+                <li><a href="?page=cart"><i class="fas fa-shopping-cart"></i><span>Cart </span>(5)</a></li>
                 <li><a href="?page=logout"><i class="fas fa-sign-out-alt"></i><span>Logout</span></a></li>
             </ul>
         </div>
@@ -24,7 +24,7 @@
             </ul>
         </div>
         <div class="collapse navbar-collapse search-field" id="navbarText">
-            <form class="form-inline my-2 my-lg-0" id="navbarText">
+            <form class="form-inline my-2 my-lg-0" method='POST' action='?page=products' id="navbarText">
                 <input class="form-control mr-sm-2" type="search" placeholder="Search..." aria-label="Search">
                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="fas fa-search"></i></button>
             </form>

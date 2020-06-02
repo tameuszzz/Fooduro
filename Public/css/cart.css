@@ -1,0 +1,113 @@
+.left-side, .right-side {
+    padding: 5% 0 0 0;
+}
+
+.right-side > img {
+    padding-left: 3rem;
+    max-width: 500px;
+    margin: 10%;
+}
+
+.left-side h1 {
+    margin-left: 1rem;
+}
+
+.items {
+    background-color: white;
+    max-height: 450px;
+    overflow: auto
+}
+
+.item {
+    display: flex;
+    padding: 1em;
+    justify-content: space-between;
+    border-bottom: 0.5px solid #D40B6F;
+}
+
+.item .remove-btn {
+    border: none;
+    background-color: white;
+    margin-left: 1em;
+}
+
+.item .remove-btn i {
+    font-size: 2em;
+    color: #D40B6F;
+}
+
+.item img {
+    width: 6em;
+    height: 4em;
+}
+
+.item h4 {
+    margin-top: 0.5em;
+    font-size: 1.8em;
+}
+
+.item p {
+    margin-top: 0.6em;
+    color: #D40B6F;
+    font-size: 1.5em;
+}
+
+.item .add-subl {
+    margin-top: 0.6em;
+}
+
+.item .add-subl button {
+    border: none;
+    background-color: white;
+    padding: 0 4px;
+}
+
+.item .add-subl .number {
+    padding: 0 10px;
+    font-size: 2.2em;
+    font-weight: 600;
+    display: initial;
+
+}
+
+.item .add-subl button i {
+    color: #D40B6F;
+    font-size: 1.5em;
+} 
+
+.summary {
+    background-color: white;
+    display: flex;
+    padding: 1em 2em;
+    justify-content: space-between;
+    border-top: 1px solid #D40B6F;
+}
+
+.summary h3 {
+    font-size: 24px;
+    letter-spacing: 2px;
+}
+
+.summary h3 span {
+    font-size: 24px;
+    margin-left: 0.2em;
+    color: #D40B6F;
+}
+
+.summary .pay-btn {
+    outline: none !important; 
+    width: 12em;
+    border: solid 1px #D40B6F !important;
+    border-radius: 20px !important;
+    color: #D40B6F !important;
+    transition-duration: 0.2s;
+    font-weight: 600;
+    background-color: white;
+    box-shadow: 3px 3px 5px #D5D7E1;
+    height: 2.5em !important;
+}
+
+.summary .pay-btn:hover {
+    color: white !important;
+    background-color: #D40B6F !important;
+}

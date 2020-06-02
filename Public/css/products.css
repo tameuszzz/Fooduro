@@ -1,0 +1,63 @@
+.first-row {
+    padding-top: 4%;
+}
+.categories {
+    background-color: white;
+    padding: unset !important;
+}
+
+.categories h1 {
+    padding-top: 0.2em;
+    padding-bottom: 0.2em;
+    color: #D40B6F;
+    font-size: 2.4em;
+    border-bottom: 1px solid #D40B6F;
+    text-align: center;
+    margin-bottom: 0.5em;
+}
+
+.categories ul {
+    list-style-type: none;
+    margin-left: 2rem;
+    margin-top: 1.2rem;
+    padding-bottom: 1em;
+    margin-bottom: 0.5rem;
+}
+
+.categories ul li {
+    margin-bottom: 0.7em;
+    font-size: 1.3em;
+}
+
+.categories ul li a {
+    text-decoration: none !important;
+}
+
+.categories ul li a:hover {
+    color: #D40B6F;
+}
+
+.left-side {
+    background-color: unset;
+}
+
+.right-side {
+    background-color: unset;
+    padding-top: 0;
+}
+
+.right-side h1 {
+    padding-top: 0.2em;
+    padding-bottom: 0.2em;
+    padding-left: 0.5em;
+    color: #D40B6F;
+    font-size: 2.4em;
+    border-bottom: 1px solid #D40B6F;
+    text-align: left;
+    font-weight: 400;
+    margin-bottom: 0.5em;
+}
+
+.prod-content {
+    height: auto;
+}

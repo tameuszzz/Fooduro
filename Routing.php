@@ -45,6 +45,18 @@ class Routing {
             'contact' => [
                 'controller' => 'BoardController',
                 'action' => 'loadContact'
+            ],
+            'account' => [
+                'controller' => 'BoardController',
+                'action' => 'loadAccount'
+            ],
+            'cart' => [
+                'controller' => 'BoardController',
+                'action' => 'loadCart'
+            ],
+            'products' => [
+                'controller' => 'BoardController',
+                'action' => 'loadProducts'
             ]
         ];
     }
