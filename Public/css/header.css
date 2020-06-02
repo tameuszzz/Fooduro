@@ -21,7 +21,7 @@ nav {
 }
 
 li > a {
-    color: #707070 !important;
+    color: #707070;
     text-decoration: none !important;
     text-transform: uppercase;
     padding-bottom: 1.65em;
@@ -104,12 +104,11 @@ button.navbar-toggler:visited {
 
 .main {
     width: 100%;
-    height: 90%;
+    min-height: 90%;
+    height: auto;
     background-image: linear-gradient(90deg, #E3EAF8, #FCF7F6);
     border-radius: 2.5rem;
 }
-
-
 
 @media screen and (max-width:960px) {
     .nav__links li {

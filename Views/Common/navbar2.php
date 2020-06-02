@@ -1,7 +1,7 @@
 <!-- navbar2 -->
 <header>
     <nav class="navbar navbar-expand-lg navbar-light bg-white">
-        <a class="navbar-brand logo" href="#"><img src="Public/img/logo.png" alt="logo">Fooduro.com</a>
+        <a class="navbar-brand logo" href="?page=home"><img src="Public/img/logo.png" alt="logo">Fooduro.com</a>
         <div class="links">
             <ul class="nav__links icons">
                 <li><a href="#"><i class="fas fa-user"></i><span>Account</span></a></li>

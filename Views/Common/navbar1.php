@@ -1,7 +1,7 @@
 <!-- navbar1 -->
 <header>
     <nav class="navbar navbar-expand-lg navbar-light bg-white">
-        <a class="navbar-brand logo" href="#"><img src="Public/img/logo.png" alt="logo">
+        <a class="navbar-brand logo" href="?page=home"><img src="Public/img/logo.png" alt="logo">
             Fooduro.com</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
             <i class="fas fa-bars"></i>
