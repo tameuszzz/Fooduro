@@ -71,16 +71,21 @@ h5 {
     font-size: 12px !important;
 }
 
-h5 > span > a {
+h4 {
+    font-size: 12px !important;
+    padding-bottom: 0.6em;
+}
+
+h5 > span > a, h4 > span > a {
     color: #707070;
     text-decoration: none;
 }
 
-h5 > span > a:hover {
+h5 > span > a:hover, h4 > span > a:hover {
     color:  #D40B6F;
 }
 
-h5 > span {
+h5 > span, h4 > span {
     text-decoration: underline;
     text-decoration-color: #707070;
 }

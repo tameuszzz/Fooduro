@@ -25,7 +25,7 @@
                     <li><a href="?page=products">Bread/Bakery</a></li>
                     <li><a href="?page=products">Canned/Jarred Goods</a></li>
                     <li><a href="?page=products">Dairy</a></li>
-                    <li><a href="?page=products">Frozen Foods</a></li>
+                    <li><a href="?page=products">Fruits/Vegetables</a></li>
                     <li><a href="?page=products">Meat</a></li>
                     <li><a href="?page=products">Produce</a></li>
                     <li><a href="?page=products">Cleaners</a></li>

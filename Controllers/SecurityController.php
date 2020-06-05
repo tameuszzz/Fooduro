@@ -43,6 +43,7 @@ class SecurityController extends AppController {
             $_SESSION["password"] = $user->getPassword();
             $_SESSION["firstName"] = $user->getFirstName();
             $_SESSION["lastName"] = $user->getLastName();
+            $_SESSION["ID_role"] = $user->getIdRole();
             $_SESSION["phone"] = $user->getPhone();
             $_SESSION["ID_address"] = $user->getIdAddress();
 

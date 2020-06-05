@@ -4,7 +4,7 @@
 <!-- header -->
 <?php include(dirname(__DIR__).'/Common/header.php'); ?>
 <!-- /header -->
-<title>Fooduro - About</title>
+<title>Fooduro - Your Cart</title>
 <?php   if ($_SESSION) {
             echo "<link rel='stylesheet' href='Public/css/navbar2.css'>";
         }

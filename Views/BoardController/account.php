@@ -4,7 +4,7 @@
 <!-- header -->
 <?php include(dirname(__DIR__).'/Common/header.php'); ?>
 <!-- /header -->
-<title>Fooduro - About</title>
+<title>Fooduro - Account</title>
 <?php   if ($_SESSION) {
             echo "<link rel='stylesheet' href='Public/css/navbar2.css'>";
         }
@@ -32,25 +32,25 @@
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="account-fn">First Name</label>
-                            <input class="form-control" type="text" id="account-fn" value="Name" required="">
+                            <input class="form-control" type="text" id="account-fn"  placeholder="John" value="" required="">
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="account-ln">Last Name</label>
-                            <input class="form-control" type="text" id="account-ln" value="Surname" required="">
+                            <input class="form-control" type="text" id="account-ln" placeholder="Doe" value="" required="">
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="account-email">E-mail Address</label>
-                            <input class="form-control" type="email" id="account-email" value="joe.doe@example.com" disabled="">
+                            <input class="form-control" type="email" id="account-email" value="john.doe@example.com" disabled="">
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="account-phone">Phone Number</label>
-                            <input class="form-control" type="text" id="account-phone" value="+48 348 915 712" required="">
+                            <input class="form-control" type="text" id="account-phone" placeholder="+48 348 915 712" value="" required="">
                         </div>
                     </div>
                     <div class="col-md-6">
@@ -74,7 +74,7 @@
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="account-phone">ZIP/Postal code</label>
-                            <input class="form-control" type="text" id="account-zip" value="00-0000" required="">
+                            <input class="form-control" type="text" id="account-zip" placeholder="00-0000" required="">
                         </div>
                     </div>
                     <div class="col-md-6">

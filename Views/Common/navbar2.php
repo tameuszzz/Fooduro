@@ -4,6 +4,10 @@
         <a class="navbar-brand logo" href="?page=home"><img src="Public/img/logo.png" alt="logo">Fooduro.com</a>
         <div class="links">
             <ul class="nav__links icons">
+                <?php if ($_SESSION['ID_role'] === 2) {
+                        echo "<li><a href='?page=adminpanel'><i class='fas fa-user-shield'></i><span>Admin Panel</span></a></li>";
+                    }
+                ?>
                 <li><a href="?page=account"><i class="fas fa-user"></i><span>Account</span></a></li>
                 <li><a href="?page=cart"><i class="fas fa-shopping-cart"></i><span>Cart </span>(5)</a></li>
                 <li><a href="?page=logout"><i class="fas fa-sign-out-alt"></i><span>Logout</span></a></li>

@@ -6,8 +6,10 @@ class User {
     private $password;
     private $firstName;
     private $lastName;
+    private $ID_role;
     private $phone;
     private $ID_address;
+    
 
     public function __construct(
         int $ID_user = null,
@@ -15,6 +17,7 @@ class User {
         string $password,
         string $firstName,
         string $lastName,
+        int $ID_role,
         string $phone = null,
         int $ID_address = null
     ) {
@@ -22,6 +25,7 @@ class User {
         $this->password = $password;
         $this->firstName = $firstName;
         $this->lastName = $lastName;
+        $this->ID_role = $ID_role;
         ($this->phone == null) ? $this->phone = '' : $this->phone = $phone;
         ($this->ID_address == null) ? $this->ID_address = '' : $this->ID_address = $ID_address;
         $this->ID_user = $ID_user;
@@ -41,6 +45,9 @@ class User {
     }
     public function getlastName() :string{
         return $this->lastName;
+    }
+    public function getIdRole() :int{
+        return $this->ID_role;
     }
     public function getPhone() :string{
         return $this->phone;

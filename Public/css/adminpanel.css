@@ -1,0 +1,85 @@
+.left-side, .right-side {
+    padding: 5% 1%;
+    text-align: center;
+}
+
+.users-tab {
+    background-color: white;
+}
+
+.products-tab {
+    background-color: white;
+}
+
+/* PRODUKTY */
+
+.item {
+    display: flex;
+    padding: 1em;
+    justify-content: space-between;
+    border-bottom: 0.5px solid #D40B6F;
+}
+
+.item.user {
+    padding: 0.2em 0.5em;
+}
+
+.item .remove-btn {
+    border: none;
+    background-color: white;
+    margin-left: 1em;
+}
+
+.item .remove-btn i {
+    font-size: 2em;
+    color: #D40B6F;
+}
+
+.item img {
+    width: 6em;
+    height: 4em;
+}
+
+.item h4 {
+    margin-top: 0.5em;
+    font-size: 1.8em;
+}
+
+.item p {
+    margin-top: 0.6em;
+    color: #D40B6F;
+    font-size: 1.5em;
+}
+
+.buttons {
+    margin-top: 1em;
+    margin-right: 0.2em;
+}
+
+.add-btn {
+    margin-bottom: 1em;
+    outline: none !important; 
+    width: 10em;
+    border: solid 1px #D40B6F !important;
+    border-radius: 20px !important;
+    color: #D40B6F !important;
+    transition-duration: 0.2s;
+    font-weight: 600;
+    background-color: white;
+    box-shadow: 3px 3px 5px #D5D7E1;
+    height: 2.5em !important;
+}
+
+.add-btn > i {
+    color: #D40B6F !important;
+    margin-left: 0.7em;
+}
+
+.add-btn:hover {
+    color: white !important;
+    background-color: #D40B6F !important;
+}
+
+.add-btn:hover > i {
+    color: white !important;
+}
