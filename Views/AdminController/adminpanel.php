@@ -39,32 +39,40 @@
         <div class="row">
             <div class="col-lg-6 col-md-6 col-sm-12 left-side">
                 <h1>Tablica z uzytkownikami</h1>
-                <p>Usun, odbierz/nadaj admina</p>
-                <div class="users-tab">
-                <div class="products-tab">
-                    <div class='col-md-12 item user'>
-                        <h4>ID</h4>
-                        <h4>Email Address</h4>
-                        <p>Imie Nazwisko</p>
-                        <div class="buttons">
-                            <button class='remove-btn'><i class="fas fa-user-shield"></i></button>
-                            <button class='remove-btn'><i class="fas fa-user-times"></i></button>
-                            <button class='remove-btn'><i class='fas fa-window-close'></i></button>
+                <p>daj admina | usun admina | usun usera</p>
+                
+                    <div class="users-tab">
+                    
+                        <div class="products-tab">
+                        <?php foreach($this->allUsers as $one):?>
+                            <div class='col-md-12 item user'>
+                                <?php if($one->getIdRole() == 2) echo('<h4>[A]</h4>') ?>
+                                <h4><?= $one->getEmail() ?></h4>
+                                <p><?= $one->getFirstName() ?> <?= $one->getLastName() ?></p>
+                                <div class="buttons">
+                                    <a href='?page=makeAdm&id=<?= $one->getIdUser() ?>' class='remove-btn'><i class="fas fa-user-shield"></i></a>
+                                    <a href='?page=dropAdm&id=<?= $one->getIdUser() ?>' class='remove-btn'><i class="fas fa-user-times"></i></a>
+                                    <a href='?page=dropUser&id=<?= $one->getIdUser() ?>' class='remove-btn'><i class='fas fa-window-close'></i></a>
+                                </div>
+                            </div>
+                            <?php endforeach; ?>
                         </div>
                     </div>
                 </div>
-                </div>
-            </div>
+                
             <div class="col-lg-6 col-md-6 col-sm-12 right-side">
                 <h1>Tablica z produktami</h1>
-                <button type='button' class='add-btn'>Add New <i class="fas fa-plus"></i></button>
+                <a href='?page=addProd' type='button' class='add-btn'>Add New <i class="fas fa-plus"></i></a>
+                
                 <div class="products-tab">
-                    <div class='col-md-12 item'>
-                        <img src='Public/img/orange.jpg' alt=''>
-                        <h4>Orange</h4>
-                        <p>6.66$ / kg</p>
-                        <button class='remove-btn'><i class='fas fa-window-close'></i></button>
-                    </div>
+                    <?php foreach($this->allProducts as $one): ?>
+                        <div class='col-md-12 item '>
+                            <img src='Public/img/orange.jpg' alt=''>
+                            <h4><?= $one->getName() ?></h4>
+                            <p><?= $one->getPrice() ?></p>
+                                <a href='?page=dropProd&id=<?= $one->getIdProduct() ?>' class='remove-btn'><i class='fas fa-window-close'></i></a>
+                        </div>
+                    <?php endforeach; ?>
                 </div>
             </div>
         </div>

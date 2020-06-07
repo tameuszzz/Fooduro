@@ -62,6 +62,38 @@ class Routing {
             'adminpanel' => [
                 'controller' => 'AdminController',
                 'action' => 'loadAdminPanel'
+            ],
+            'makeAdm' => [
+                'controller' => 'AdminController',
+                'action' => 'makeAdm'
+            ],
+            'dropAdm' => [
+                'controller' => 'AdminController',
+                'action' => 'dropAdm'
+            ],
+            'dropUser' => [
+                'controller' => 'AdminController',
+                'action' => 'deleteUser'
+            ],
+            'dropProd' => [
+                'controller' => 'AdminController',
+                'action' => 'deleteProducts'
+            ],
+            'addProd' => [
+                'controller' => 'AdminController',
+                'action' => 'addProducts'
+            ],
+            'add' => [
+                'controller' => 'BoardController',
+                'action' => 'addToCart'
+            ],
+            'drop' => [
+                'controller' => 'BoardController',
+                'action' => 'drop'
+            ],
+            'save' => [
+                'controller' => 'BoardController',
+                'action' => 'save'
             ]
         ];
     }

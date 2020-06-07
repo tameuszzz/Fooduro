@@ -9,7 +9,7 @@
                     }
                 ?>
                 <li><a href="?page=account"><i class="fas fa-user"></i><span>Account</span></a></li>
-                <li><a href="?page=cart"><i class="fas fa-shopping-cart"></i><span>Cart </span>(5)</a></li>
+                <li><a href="?page=cart"><i class="fas fa-shopping-cart"></i><span>Cart </span>(<?= $this->ilosc_details ?>)</a></li>
                 <li><a href="?page=logout"><i class="fas fa-sign-out-alt"></i><span>Logout</span></a></li>
             </ul>
         </div>
@@ -25,6 +25,8 @@
                 <li <?=(($_GET['page'] == 'delivery') ? 'class="active"' : '')?>><a href="?page=delivery">Delivery</a></li>
                 <li <?=(($_GET['page'] == 'payments') ? 'class="active"' : '')?>><a href="?page=payments">Payments</a></li>
                 <li <?=(($_GET['page'] == 'contact') ? 'class="active"' : '')?>><a href="?page=contact">Contact</a></li>
+
+                
             </ul>
         </div>
         <div class="collapse navbar-collapse search-field" id="navbarText">

@@ -13,21 +13,22 @@ class Product {
     public function __construct(
         int $ID_product = null,
         string $name,
-        double $price,
-        double $promotion,
+        string $price,
+        string $promotion,
         int $ID_category,
         string $description,
         string $photo
     ) {
         $this->name = $name;
-        $this->price = $price;
-        $this->promotion = $promotion;
+        $this->price = (double)$price;
+        $this->promotion = (double)$promotion;
         $this->ID_category = $ID_category;
         $this->description = $description;
         $this->photo = $photo;
+        $this->ID_product = $ID_product;
     }
 
-    public function getIdProduct() :int {
+    public function getIdProduct() {
         return $this->ID_product;
     }
 
@@ -35,11 +36,11 @@ class Product {
         return $this->name;
     }
 
-    public function getPrice() :double {
+    public function getPrice() {
         return $this->price;
     }
 
-    public function getPromotion() :double {
+    public function getPromotion() {
         return $this->promotion;
     }
 

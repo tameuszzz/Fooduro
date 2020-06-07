@@ -17,7 +17,7 @@ class User {
         string $password,
         string $firstName,
         string $lastName,
-        int $ID_role,
+        int $ID_role = null,
         string $phone = null,
         int $ID_address = null
     ) {
@@ -26,8 +26,8 @@ class User {
         $this->firstName = $firstName;
         $this->lastName = $lastName;
         $this->ID_role = $ID_role;
-        ($this->phone == null) ? $this->phone = '' : $this->phone = $phone;
-        ($this->ID_address == null) ? $this->ID_address = '' : $this->ID_address = $ID_address;
+        $this->phone = $phone;
+        $this->ID_address = $ID_address;
         $this->ID_user = $ID_user;
     }
 
@@ -43,16 +43,16 @@ class User {
     public function getFirstName() :string{
         return $this->firstName;
     }
-    public function getlastName() :string{
+    public function getLastName() :string{
         return $this->lastName;
     }
     public function getIdRole() :int{
         return $this->ID_role;
     }
-    public function getPhone() :string{
+    public function getPhone(){
         return $this->phone;
     }
-    public function getIdAddress() :string{
+    public function getIdAddress(){
         return $this->ID_address;
     }
 }

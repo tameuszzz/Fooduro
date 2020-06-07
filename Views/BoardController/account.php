@@ -28,65 +28,54 @@
         <div class="row">
             <div class="col-lg-6 col-md-6 col-sm-0 left-side">
                 <h1>Settings</h1>
-                <form class="row settings">
+                <form class="row settings" method='POST' acction='?page=account'>
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="account-fn">First Name</label>
-                            <input class="form-control" type="text" id="account-fn"  placeholder="John" value="" required="">
+                            <input class="form-control" name="firstName" type="text" id="account-fn"  placeholder="Joe" value="<?= $this->userD->getFirstName() ?>" required="">
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="account-ln">Last Name</label>
-                            <input class="form-control" type="text" id="account-ln" placeholder="Doe" value="" required="">
+                            <input class="form-control" name="lastName" type="text" id="account-ln" placeholder="Doe" value="<?= $this->userD->getLastName() ?>" required="">
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="account-email">E-mail Address</label>
-                            <input class="form-control" type="email" id="account-email" value="john.doe@example.com" disabled="">
+                            <input class="form-control" name ="email" type="email" id="account-email" value="<?= $this->userD->getEmail() ?>" disabled="">
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="account-phone">Phone Number</label>
-                            <input class="form-control" type="text" id="account-phone" placeholder="+48 348 915 712" value="" required="">
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="account-pass">New Password</label>
-                            <input class="form-control" type="password" placeholder="Password" id="account-pass">
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="account-confirm-pass">Confirm Password</label>
-                            <input class="form-control" type="password" placeholder="Password" id="account-confirm-pass">
+                            <input class="form-control" name='phone' type="text" id="account-phone" placeholder="+48 348 915 712" value="<?php if($this->userD->getPhone() != null) echo($this->userD->getPhone()); ?>">
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="account-phone">Address</label>
-                            <input class="form-control" type="text" id="account-address" value="" required="">
+                            <input class="form-control" name='street' type="text" id="account-address" placeholder="Green Street 57" value="<?php if($this->addressD->getStreet() != null) {echo($this->addressD->getStreet());} ?>">
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="account-phone">ZIP/Postal code</label>
-                            <input class="form-control" type="text" id="account-zip" placeholder="00-0000" required="">
+                            <input class="form-control" name='postal_code' type="text" id="account-zip" placeholder="33100" value="<?php if($this->addressD->getPostalCode() != null) echo($this->addressD->getPostalCode()); ?>">
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="account-phone">City</label>
-                            <input class="form-control" type="text" id="account-city" value="" required="">
+                            <input class="form-control" name='city' type="text" id="account-city" placeholder="Dallas" value="<?php if($this->addressD->getCity() != null) echo($this->addressD->getCity()); ?>">
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="account-phone">Country</label>
                             <select id="country" name="country" class="form-control">
+                                <option value="NotSelected">Not selected</option>
                                 <option value="Afghanistan">Afghanistan</option>
                                 <option value="Åland Islands">Åland Islands</option>
                                 <option value="Albania">Albania</option>
@@ -341,7 +330,7 @@
                                 <input class="custom-control-input" type="checkbox" id="subscribe_me" checked="">
                                 <label class="custom-control-label" for="subscribe_me">Subscribe me to Newsletter</label>
                             </div>
-                            <button class="btn btn-style-1 btn-primary update-btn" type="button" data-toast="" data-toast-position="topRight" data-toast-type="success" data-toast-icon="fe-icon-check-circle" data-toast-title="Success!" data-toast-message="Your profile updated successfuly.">Update Profile</button>
+                            <button class="btn btn-style-1 btn-primary update-btn" type="submit" data-toast="" data-toast-position="topRight" data-toast-type="success" data-toast-icon="fe-icon-check-circle" data-toast-title="Success!" data-toast-message="Your profile updated successfuly.">Update Profile</button>
                         </div>
                     </div>
                 </form>

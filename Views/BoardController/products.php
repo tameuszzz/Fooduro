@@ -22,16 +22,11 @@
                 <div class="categories">
                     <h1>ALL CATEGORIES</h1>
                     <ul>
-                        <li><a href="?page=products">Beverages</a></li>
-                        <li><a href="?page=products">Bread/Bakery</a></li>
-                        <li><a href="?page=products">Canned/Jarred Goods</a></li>
-                        <li><a href="?page=products">Dairy</a></li>
-                        <li><a href="?page=products">Fruits/Vegetables</a></li>
-                        <li><a href="?page=products">Meat</a></li>
-                        <li><a href="?page=products">Produce</a></li>
-                        <li><a href="?page=products">Cleaners</a></li>
-                        <li><a href="?page=products">Paper Goods</a></li>
-                        <li><a href="?page=products">Other</a></li>
+
+                        <?php foreach ($this->categories as $one): ?>  
+                            <li><a href="?page=products&id=<?= $one->getIdCategory() ?>"> <?= $one->getName() ?></a></li>
+                        <?php endforeach; ?>
+
                     </ul>  
                 </div>
                 <div class="adv" id="adv1">
@@ -59,19 +54,22 @@
                         <h1>Results for cat-name</h1>;
                     </div>
                     <div class="row">
-                        <?php
-                            for ($i = 1; $i <= 12; $i++)
-                            {
-                                echo "
-                                <div class='col-lg-3 col-md-3 col-sm-3 item'>
-                                <img src='Public/img/orange.jpg' alt=''>
-                                <h2>Orange</h2>
-                                <p>6.66$ / kg</p>
-                                <button type='button' class='cart-btn'>Add to cart <i class='fas fa-cart-plus'></i></button>
-                                </div>
-                                ";
-                            }
-                        ?>
+                        <?php 
+                            if(isset($prs)){
+                                foreach ($prs as $one): ?>
+                                
+                                    <div class='col-lg-3 col-md-3 col-sm-3 item'>
+                                    <img src='Public/img/orange.jpg' alt=''>
+                                    <h2> <?= $one->getName() ?></h2>
+                                    <p> <?= $one->getPrice() ?>$</p>
+                                    <a type='button' href='?page=add&id=<?= $one->getIdProduct() ?>' class='cart-btn'>Add to cart <i class='fas fa-cart-plus'></i></a>
+                                    </div>
+                            
+                        <?php endforeach; 
+                            } else {
+                                echo("<div class='col-lg-6 col-md-3 col-sm-3 item'> There are no product in category.</div>");
+
+                            }?>
                         
                     </div>
                 </div>

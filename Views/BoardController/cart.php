@@ -27,30 +27,25 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-6 col-md-6 col-sm-0 left-side">
-                <h1>Your Cart (5)</h1>
+                <h1>Your Cart (<?= $this->ilosc_details ?>)</h1>
                 <div class='items'>
-                <?php
-                    for ($i = 1; $i <= 5; $i++)
-                    {
-                        echo "
-                            <div class='col-md-12 item'>
-                                <button class='remove-btn'><i class='fas fa-window-close'></i></button>
+                    <?php if(isset($userPrs)) foreach ($userPrs as $one){ 
+                        $pr = $this->productRepository->getProductById($one->getIdProduct()); ?>
+                        
+                        <div class='col-md-12 item'>
+                                <a href='?page=drop&id=<?= $one->getIdDetails() ?>'class='remove-btn'><i class='fas fa-window-close'></i></a>
                                 <img src='Public/img/orange.jpg' alt=''>
-                                <h4>Orange</h4>
-                                <p>6.66$ / kg</p>
+                                <h4><?= $pr->getName() ?></h4>
+                                <p><?= $pr->getPrice() ?>$</p>
                                 <div class='add-subl'>
-                                    <span class='count'><button><i class='fas fa-plus'></i></button></span>
-                                    <h5 class='number'>1</h5>
-                                    <span class='count'><button><i class='fas fa-minus'></i></button></span>
                                 </div>
                             </div>
-                        ";
-                    }
-                ?>
+                    <?php } ?>
                 </div>
                 <div class="summary">
-                    <h3>Total: <span>44$</span></h3>
-                    <button type='button' class='pay-btn'>Go to payments</button>
+                <!-- getAmount -->
+                    <h3>Total: <span><?php if(isset($userPrs)) echo($this->productRepository->getAmount($one->getIdOrder())); ?>$</span></h3>
+                    <a href='?page=save' type='button' class='pay-btn'>Go to payments</a>
                 </div>
             </div>
             <div class="col-lg-6 col-md-6 col-sm-0 right-side">

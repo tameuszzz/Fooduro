@@ -21,16 +21,11 @@
             <div class="col-lg-3 col-md-3 col-sm-12 left-side">
                 <h1>ALL CATEGORIES</h1>
                 <ul>
-                    <li><a href="?page=products">Beverages</a></li>
-                    <li><a href="?page=products">Bread/Bakery</a></li>
-                    <li><a href="?page=products">Canned/Jarred Goods</a></li>
-                    <li><a href="?page=products">Dairy</a></li>
-                    <li><a href="?page=products">Fruits/Vegetables</a></li>
-                    <li><a href="?page=products">Meat</a></li>
-                    <li><a href="?page=products">Produce</a></li>
-                    <li><a href="?page=products">Cleaners</a></li>
-                    <li><a href="?page=products">Paper Goods</a></li>
-                    <li><a href="?page=products">Other</a></li>
+                    
+                    <?php foreach ($this->categories as $one): ?>    
+                        <li><a href="?page=products&id=<?= $one->getIdCategory() ?>"> <?= $one->getName() ?> </a></li>
+                    <?php endforeach; ?>
+
                 </ul>  
             </div>
             <div class="col-lg-7 col-md-7 col-sm-9 mid-side"> 
@@ -68,24 +63,19 @@
             <div class="col-lg-9 col-md-9 col-sm-12 products">
                 <div class="prod-content">
                     <ul class="sort-option">
-                        <li class="active"><a href="#">TOP PRODUCTS</a></li>
-                        <li><a href="">NEW PRODUCTS</a></li>
-                        <li><a href="">SPECIALLS</a></li>
+                        <li class="active"><a href="#">NEW PRODUCTS</a></li>
+
                     </ul>
                     <div class="row">
-                        <?php
-                            for ($i = 1; $i <= 12; $i++)
-                            {
-                                echo "
+                    
+                            <?php foreach ($newProds as $one): ?>
                                 <div class='col-lg-3 col-md-3 col-sm-3 item'>
-                                <img src='Public/img/orange.jpg' alt=''>
-                                <h2>Orange</h2>
-                                <p>6.66$ / szt</p>
-                                <button type='button' class='cart-btn'>Add to cart <i class='fas fa-cart-plus'></i></button>
+                                    <img src='Public/img/orange.jpg' alt=''>
+                                    <h2> <?= $one->getName() ?></h2>
+                                    <p> <?= $one->getPrice() ?>$</p>
+                                    <a type='button' href='?page=add&id=<?= $one->getIdProduct() ?>' class='cart-btn'>Add to cart <i class='fas fa-cart-plus'></i></a>
                                 </div>
-                                ";
-                            }
-                        ?>
+                            <?php endforeach; ?>
                         
                     </div>
                 </div>
