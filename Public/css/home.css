@@ -84,6 +84,8 @@ img {
     box-shadow: 3px 3px 5px #D5D7E1;
     height: 2.5em !important;
     margin-top: 0.5rem;
+    text-decoration: none !important;
+    padding-top: 0.4em;
 }
 
 .see-now-button > i, .cart-btn > i {
@@ -195,7 +197,19 @@ img {
 
 .item > img {
     width: 10em;
-    border-radius: 50%
+    border-radius: 50%;
+    height: 10em;
+}
+
+.item h2 {
+    display: inline;
+    font-size: 1.8em;
+}
+
+.item h2 span {
+    font-size: 1em;
+    color: green;
+    font-weight: 600;
 }
 
 .item > p {
@@ -206,4 +220,11 @@ img {
 
 .item .cart-btn {
     width: 10em;
+}
+
+.old-price {
+    vertical-align: super;
+    font-size: smaller;
+    margin-left: 0.5em;
+    padding-top: 0;
 }

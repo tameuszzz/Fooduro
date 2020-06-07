@@ -34,9 +34,11 @@
                         
                         <div class='col-md-12 item'>
                                 <a href='?page=drop&id=<?= $one->getIdDetails() ?>'class='remove-btn'><i class='fas fa-window-close'></i></a>
-                                <img src='Public/img/orange.jpg' alt=''>
+                                <?php 
+                                    echo '<img src="data:image/jpeg;base64,'.base64_encode($pr->getPhoto()).'"/>'; 
+                                ?>
                                 <h4><?= $pr->getName() ?></h4>
-                                <p><?= $pr->getPrice() ?>$</p>
+                                <p><?= round($pr->getPrice()-($pr->getPrice()*$pr->getPromotion()), 2)?>$</p>
                                 <div class='add-subl'>
                                 </div>
                             </div>

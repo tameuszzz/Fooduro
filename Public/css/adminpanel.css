@@ -27,7 +27,8 @@
 .item .remove-btn {
     border: none;
     background-color: white;
-    margin-left: 1em;
+    margin-left: 2em;
+    margin-top: 1em;
 }
 
 .item .remove-btn i {
@@ -68,6 +69,8 @@
     background-color: white;
     box-shadow: 3px 3px 5px #D5D7E1;
     height: 2.5em !important;
+    text-decoration: none !important;
+    padding-top: 0.4em;
 }
 
 .add-btn > i {

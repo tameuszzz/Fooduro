@@ -39,10 +39,7 @@
         <div class="row">
             <div class="col-lg-6 col-md-6 col-sm-12 left-side">
                 <h1>Tablica z uzytkownikami</h1>
-                <p>daj admina | usun admina | usun usera</p>
-                
                     <div class="users-tab">
-                    
                         <div class="products-tab">
                         <?php foreach($this->allUsers as $one):?>
                             <div class='col-md-12 item user'>
@@ -50,8 +47,13 @@
                                 <h4><?= $one->getEmail() ?></h4>
                                 <p><?= $one->getFirstName() ?> <?= $one->getLastName() ?></p>
                                 <div class="buttons">
-                                    <a href='?page=makeAdm&id=<?= $one->getIdUser() ?>' class='remove-btn'><i class="fas fa-user-shield"></i></a>
-                                    <a href='?page=dropAdm&id=<?= $one->getIdUser() ?>' class='remove-btn'><i class="fas fa-user-times"></i></a>
+                                <?php if($one->getIdRole() == 2) {
+                                            echo("<a class='remove-btn' href='?page=dropAdm&id=" .$one->getIdUser() ."'><i class='fas fa-user-times'></i></a>");
+                                    }   else {
+                                            echo("<a class='remove-btn' href='?page=makeAdm&id=" .$one->getIdUser() ."'><i class='fas fa-user-shield'></i></a>");
+                                            
+                                    }
+                                ?>
                                     <a href='?page=dropUser&id=<?= $one->getIdUser() ?>' class='remove-btn'><i class='fas fa-window-close'></i></a>
                                 </div>
                             </div>
@@ -63,14 +65,23 @@
             <div class="col-lg-6 col-md-6 col-sm-12 right-side">
                 <h1>Tablica z produktami</h1>
                 <a href='?page=addProd' type='button' class='add-btn'>Add New <i class="fas fa-plus"></i></a>
-                
                 <div class="products-tab">
                     <?php foreach($this->allProducts as $one): ?>
                         <div class='col-md-12 item '>
-                            <img src='Public/img/orange.jpg' alt=''>
+                            <?php 
+                                echo '<img src="data:image/jpeg;base64,'.base64_encode($one->getPhoto()).'"/>'; 
+                            ?>
                             <h4><?= $one->getName() ?></h4>
-                            <p><?= $one->getPrice() ?></p>
-                                <a href='?page=dropProd&id=<?= $one->getIdProduct() ?>' class='remove-btn'><i class='fas fa-window-close'></i></a>
+                            <p><?= round($one->getPrice()-($one->getPrice()*$one->getPromotion()), 2)?></p>
+                            <p><?php 
+                                    if($one->getPromotion() != 0) {
+                                        echo ' -'.$one->getPromotion()*100;
+                                        echo '%';
+                                    } else {
+                                        echo '-';
+                                    }
+                                ?></p>
+                            <a href='?page=dropProd&id=<?= $one->getIdProduct() ?>' class='remove-btn'><i class='fas fa-window-close'></i></a>
                         </div>
                     <?php endforeach; ?>
                 </div>

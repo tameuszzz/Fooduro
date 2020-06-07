@@ -98,6 +98,33 @@ class ProductRepository extends Repository {
         return $result;
     }
 
+    public function getSearchProducts($name) {
+        $stmt = $this->database->connect()->prepare('
+            SELECT * FROM product
+            WHERE promotion = 0.15
+        ');
+        
+        $stmt->execute();
+
+        $result = [];
+        $ones = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        if($ones == false) {
+            return null;
+        }
+        foreach ($ones as $one){
+            $result[] = new Product(
+                $one['ID_product'],
+                $one['name'],
+                $one['price'],
+                $one['promotion'],
+                $one['ID_category'],
+                $one['description'],
+                $one['photo']
+            );
+        }
+        return $result;
+    }
+
     public function get12NewProducts(){
         $stmt = $this->database->connect()->prepare('
             SELECT * FROM product
@@ -157,14 +184,20 @@ class ProductRepository extends Repository {
         $stmt->execute();
     }
 
-    public function addProduct($name, $price, $ID_category){
+    public function addProduct($name, $price, $promotion, $ID_category, $description, $photo){
+
+        $photo = file_get_contents($_FILES['photo']['tmp_name']);
+
         $stmt = $this->database->connect()->prepare('
-            INSERT INTO product(name, price, ID_category)
-            VALUES (:name, :price, :ID_category)
+            INSERT INTO product(name, price, promotion, ID_category, description, photo)
+            VALUES (:name, :price, :promotion, :ID_category, :description, :photo)
         ');
         $stmt->bindParam(':name', $name, PDO::PARAM_STR);
         $stmt->bindParam(':price', strval($price), PDO::PARAM_STR);
+        $stmt->bindParam(':promotion', strval($promotion), PDO::PARAM_STR);
         $stmt->bindParam(':ID_category', $ID_category, PDO::PARAM_INT);
+        $stmt->bindParam(':description', $description, PDO::PARAM_STR);
+        $stmt->bindParam(':photo', $photo, PDO::PARAM_STR);
         $stmt->execute();
     }
 
@@ -222,6 +255,7 @@ class ProductRepository extends Repository {
         $stmt->execute();
     }
     public function getAmount($ID_order){
+
         $stmt = $this->database->connect()->prepare('
             SELECT sum(amount) as ill FROM detail
             WHERE ID_order = :ID_order
@@ -236,8 +270,6 @@ class ProductRepository extends Repository {
 
         return $ones['ill'];
     }
-
-    
 
     //details
     public function makeDetails($ID_order, $ID_product, $quantity, $amount){

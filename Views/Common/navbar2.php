@@ -30,8 +30,8 @@
             </ul>
         </div>
         <div class="collapse navbar-collapse search-field" id="navbarText">
-            <form class="form-inline my-2 my-lg-0" method='POST' action='?page=products' id="navbarText">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search..." aria-label="Search">
+            <form class="form-inline my-2 my-lg-0" method='POST' action='?page=search' id="navbarText">
+                <input class="form-control mr-sm-2" type="search" name="name" placeholder="Search..." aria-label="Search">
                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="fas fa-search"></i></button>
             </form>
         </div>

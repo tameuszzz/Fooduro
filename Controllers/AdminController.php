@@ -61,8 +61,38 @@ class AdminController extends AppController {
         if($this->isPost()){
             $name = $_POST['name'];
             $price = $_POST['price'];
+            $promotion = $_POST['promotion'];
             $ID_category = $_POST['category'];
-            $this->productRepository->addProduct($name, $price, $ID_category);
+            $description = $_POST['description'];
+            $photo = "";
+
+            $mess = "";
+            $array = explode('.', $_FILES['photo']['name']);
+            $fileExt = strtolower(end($array));
+
+            if ($_FILES['photo']['name'] != "") {
+
+                $uploadAvailable = true;
+                $extensions = array("jpeg", "jpg", "png");
+
+                if (!in_array($fileExt, $extensions)) {
+                    $mess = 'Złe rozszerzenie pliku. Wybierz plik z rozszerzeniem PNG lub JPEG';
+                    $uploadAvailable = false;
+                }
+
+                if ($_FILES['photo']['size'] > 1048576) {        // upload_max_size returns 0 if the size of file is bigger than 2M
+                    $mess = 'Plik zbyt duży. Maksymalna wielkość pliku to 1MB';
+                    $uploadAvailable = false;
+                }
+                
+            }
+
+            if ($uploadAvailable) {
+                $this->productRepository->addProduct($name, $price, $promotion, $ID_category, $description, $photo);
+            } else {
+                die($mess);
+            }
+
             $url = "http://$_SERVER[HTTP_HOST]/";
             header("Location: {$url}Fooduro/?page=adminpanel");
             return;

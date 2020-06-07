@@ -59,6 +59,10 @@ class Routing {
                 'controller' => 'BoardController',
                 'action' => 'loadProducts'
             ],
+            'search' => [
+                'controller' => 'BoardController',
+                'action' => 'loadSearchProducts'
+            ],
             'adminpanel' => [
                 'controller' => 'AdminController',
                 'action' => 'loadAdminPanel'

@@ -29,6 +29,7 @@
     border: none;
     background-color: white;
     margin-left: 1em;
+    padding-top: 1em;
 }
 
 .item .remove-btn i {
@@ -81,6 +82,7 @@
     padding: 1em 2em;
     justify-content: space-between;
     border-top: 1px solid #D40B6F;
+    margin-bottom: 1em;
 }
 
 .summary h3 {
@@ -95,6 +97,7 @@
 }
 
 .summary .pay-btn {
+    text-align: center;
     outline: none !important; 
     width: 12em;
     border: solid 1px #D40B6F !important;
@@ -105,6 +108,8 @@
     background-color: white;
     box-shadow: 3px 3px 5px #D5D7E1;
     height: 2.5em !important;
+    text-decoration: none !important;
+    padding-top: 0.4em;
 }
 
 .summary .pay-btn:hover {

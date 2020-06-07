@@ -2,4 +2,4 @@
     const HOST = 'localhost';
     const USERNAME = 'root';
     const PASSWORD = '';
-    const DATABASE = 'fooduro';
+    const DATABASE = 'fooduro1';

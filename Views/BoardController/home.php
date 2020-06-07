@@ -36,7 +36,7 @@
                 <h3>12.04 - 19.04</h3>
                 <h2>All <span>vegatables</span></h2>
                 <p>-15%</p>
-                <button type='button' class='see-now-button'>See Now<i class="fas fa-chevron-right"></i></button>
+                <a type='button' href="?page=products&id=5" class='see-now-button'>See Now<i class="fas fa-chevron-right"></i></a>
             </div>
         </div>
         <div class="row second-row">
@@ -70,9 +70,26 @@
                     
                             <?php foreach ($newProds as $one): ?>
                                 <div class='col-lg-3 col-md-3 col-sm-3 item'>
-                                    <img src='Public/img/orange.jpg' alt=''>
-                                    <h2> <?= $one->getName() ?></h2>
-                                    <p> <?= $one->getPrice() ?>$</p>
+                                    <?php 
+                                        echo '<img src="data:image/jpeg;base64,'.base64_encode($one->getPhoto()).'"/>'; 
+                                    ?>
+                                    <h2><?= $one->getName()?>
+                                    <span>
+                                        <?php 
+                                        if($one->getPromotion() != 0) {
+                                            echo ' -'.$one->getPromotion()*100;
+                                            echo '%';
+                                        }
+                                        ?>
+                                    </span>
+                                    </h2>
+                                    <p><?= round($one->getPrice()-($one->getPrice()*$one->getPromotion()), 2)?>$ / <?= $one->getDescription() ?>
+                                    <?php
+                                        if($one->getPromotion() != 0) {
+                                            echo "<span class='old-price'><del>".$one->getPrice()."$</del></span>";
+                                        }
+                                    ?>
+                                    </p>
                                     <a type='button' href='?page=add&id=<?= $one->getIdProduct() ?>' class='cart-btn'>Add to cart <i class='fas fa-cart-plus'></i></a>
                                 </div>
                             <?php endforeach; ?>

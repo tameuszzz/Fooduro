@@ -16,8 +16,10 @@ class BoardController extends AppController {
 
         $this->categories = $this->productRepository->getAllCategories();
 
-        $q = $this->productRepository->takeUserOrder($_SESSION['ID_user'], 1);
-        ($q == null) ? $this->ilosc_details = 0 : $this->ilosc_details = $this->productRepository->getNumberOfDetails($q->getIdOrder());
+        if (isset($_SESSION['ID_user'])) {
+            $q = $this->productRepository->takeUserOrder($_SESSION['ID_user'], 1);
+            ($q == null) ? $this->ilosc_details = 0 : $this->ilosc_details = $this->productRepository->getNumberOfDetails($q->getIdOrder());
+        }
     }
 
     public function loadHome() {
@@ -152,7 +154,15 @@ class BoardController extends AppController {
         $id = $_GET['id'];
         $products = $this->productRepository->getAllProductFromCategory($id);
         $this->render('products', ['prs' => $products]);
-    }    
+    }
+
+    public function loadSearchProducts() {
+        if($this->isPost()){
+            $name = $_POST['name'];
+            $products = $this->productRepository->getSearchProducts($name);
+            $this->render('search', ['prs' => $products]);
+        }
+    }
 
     public function addToCart(){
         $ID_prod = $_GET['id'];
@@ -165,6 +175,9 @@ class BoardController extends AppController {
         $orderID = $this->productRepository->takeUserOrder($_SESSION['ID_user'], 1)->getIdOrder();
         //dodaj produkt do details
         $amount = $this->productRepository->getProductById($ID_prod)->getPrice();
+        $discount = $this->productRepository->getProductById($ID_prod)->getPromotion();
+        $discount = $amount * $discount;
+        $amount = $amount - $discount;
         $this->productRepository->makeDetails($orderID, $ID_prod, 1, $amount);
 
         //policz amount zamowienia

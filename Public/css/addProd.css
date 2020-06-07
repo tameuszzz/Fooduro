@@ -1,0 +1,52 @@
+.side {
+    padding: 2%;
+    text-align: center;
+}
+
+.side .form-group {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    color: #707070;
+    padding-top: 1em;
+    max-width: 25em;
+    margin: auto !important;
+}
+
+.side .form-group > input {
+    text-align: center;
+}
+
+.form-group label {
+    font-size: 1.3em;
+}
+
+.side .form-control {
+    font-size: 1.2rem;
+    color: #707070;
+    border-color: #D40B6F !important;
+    outline: none !important; 
+    box-shadow: 7px 7px 9px #D5D7E1;
+}
+
+select {
+    text-align-last:center;
+}
+
+.add-btn {
+    outline: none !important; 
+    width: 6em;
+    border: solid 1px #D40B6F !important;
+    border-radius: 20px !important;
+    color: #D40B6F !important;
+    transition-duration: 0.2s;
+    font-weight: 600;
+    background-color: white;
+    box-shadow: 3px 3px 5px #D5D7E1;
+    height: 2em !important;
+    margin-bottom: 1rem;
+    margin-top: 1em;
+}
+.add-btn:hover {
+    color: white !important;
+    background-color: #D40B6F !important;
+}

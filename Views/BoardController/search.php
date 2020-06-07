@@ -51,7 +51,7 @@
             <div class="col-lg-9 col-md-9 col-sm-12 right-side">
                 <div class="prod-content">
                     <div class="results">
-                        <h1>Results for <?= $this->productRepository->GetCategoryById($_GET['id'])->getName() ?></h1>
+                        <!-- <h1>Results for <?= $this->productRepository->GetCategoryById($_GET['id'])->getName() ?></h1> -->
                     </div>
                     <div class="row">
                         <?php 
