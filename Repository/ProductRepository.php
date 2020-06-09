@@ -98,33 +98,6 @@ class ProductRepository extends Repository {
         return $result;
     }
 
-    public function getSearchProducts($name) {
-        $stmt = $this->database->connect()->prepare('
-            SELECT * FROM product
-            WHERE promotion = 0.15
-        ');
-        
-        $stmt->execute();
-
-        $result = [];
-        $ones = $stmt->fetchAll(PDO::FETCH_ASSOC);
-        if($ones == false) {
-            return null;
-        }
-        foreach ($ones as $one){
-            $result[] = new Product(
-                $one['ID_product'],
-                $one['name'],
-                $one['price'],
-                $one['promotion'],
-                $one['ID_category'],
-                $one['description'],
-                $one['photo']
-            );
-        }
-        return $result;
-    }
-
     public function get12NewProducts(){
         $stmt = $this->database->connect()->prepare('
             SELECT * FROM product

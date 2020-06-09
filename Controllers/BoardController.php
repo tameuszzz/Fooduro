@@ -156,14 +156,6 @@ class BoardController extends AppController {
         $this->render('products', ['prs' => $products]);
     }
 
-    public function loadSearchProducts() {
-        if($this->isPost()){
-            $name = $_POST['name'];
-            $products = $this->productRepository->getSearchProducts($name);
-            $this->render('search', ['prs' => $products]);
-        }
-    }
-
     public function addToCart(){
         $ID_prod = $_GET['id'];
         //sprawdz czy uzytkownik ma order
@@ -177,7 +169,7 @@ class BoardController extends AppController {
         $amount = $this->productRepository->getProductById($ID_prod)->getPrice();
         $discount = $this->productRepository->getProductById($ID_prod)->getPromotion();
         $discount = $amount * $discount;
-        $amount = $amount - $discount;
+        $amount = round($amount - $discount, 2);
         $this->productRepository->makeDetails($orderID, $ID_prod, 1, $amount);
 
         //policz amount zamowienia

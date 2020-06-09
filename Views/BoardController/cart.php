@@ -46,7 +46,7 @@
                 </div>
                 <div class="summary">
                 <!-- getAmount -->
-                    <h3>Total: <span><?php if(isset($userPrs)) echo($this->productRepository->getAmount($one->getIdOrder())); ?>$</span></h3>
+                    <h3>Total: <span><?php if(isset($userPrs)) echo(round($this->productRepository->getAmount($one->getIdOrder()), 2)); ?>$</span></h3>
                     <a href='?page=save' type='button' class='pay-btn'>Go to payments</a>
                 </div>
             </div>
